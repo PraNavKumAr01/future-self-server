@@ -107,5 +107,9 @@ async def validate_and_generate_dream(dream_request: DreamRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-
-#uvicorn app:app --port 8001 --reload
+@app.get("/health", response_model=DreamResponse)
+async def health_check():
+    try:
+        return DreamResponse(content="server up")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

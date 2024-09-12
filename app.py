@@ -1,4 +1,3 @@
-import sys
 import os
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
@@ -8,8 +7,6 @@ from langchain_groq import ChatGroq
 from langchain.prompts import PromptTemplate
 
 load_dotenv()
-
-sys.path.append("/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages")
 
 os.environ["GROQ_API_KEY"] = os.getenv("GROQ_API_KEY")
 
